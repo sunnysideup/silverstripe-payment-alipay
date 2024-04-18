@@ -1,4 +1,4 @@
-# Payment with AliPay / Weechat
+# Payment with AliPay / wechat
 
 [![Build Status](https://travis-ci.org/sunnysideup/silverstripe-pricespy.svg?branch=master)](https://travis-ci.org/sunnysideup/silverstripe-pricespy)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-pricespy/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sunnysideup/silverstripe-pricespy/?branch=master)

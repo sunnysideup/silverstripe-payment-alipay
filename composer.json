@@ -1,9 +1,13 @@
 {
     "name": "sunnysideup/payment-alipay",
-    "description": "Allows e-commerce payments to be made with weechat / Alipay",
+    "description": "Allows e-commerce payments to be made with wechat / Alipay",
     "type": "silverstripe-vendormodule",
     "keywords": [
-        "alipay"
+        "silverstripe",
+        "ecommerce",
+        "payment",
+        "alipay",
+        "wechat"
     ],
     "license": "BSD-3-Clause",
     "require": {

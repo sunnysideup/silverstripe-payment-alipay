@@ -2,7 +2,6 @@
 
 namespace Sunnysideup\PaymentAliPay;
 
-class ExampleClass
+class PaymentAliPay
 {
-
 }

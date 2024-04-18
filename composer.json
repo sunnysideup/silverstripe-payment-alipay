@@ -28,10 +28,6 @@
             "client/dist"
         ]
     },
-    "bin": [
-        "bin/sake-npm-build-payment-alipay.sh",
-        "bin/sake-npm-watch-payment-alipay.sh"
-    ],
     "authors": [
         {
             "name": "Nicolaas Thiemen Francken",

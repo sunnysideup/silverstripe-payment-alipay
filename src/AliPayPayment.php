@@ -31,7 +31,7 @@ class AliPayPayment extends EcommercePayment
 
     private static $qrcode_image = 'app/client/images/alipay.png';
 
-    private static $logo = 'sunnysideup/payment-alipay: client/images/alipay.png';
+    private static $logo = 'sunnysideup/payment-alipay: client/dist/images/alipay.png';
 
     private static $email_debug = false;
     public function getPaymentFormFields($amount = 0, ?Order $order = null): FieldList

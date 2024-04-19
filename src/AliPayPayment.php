@@ -29,6 +29,21 @@ class AliPayPayment extends EcommercePayment
     private static $db = [
     ];
 
+
+    /**
+     * standard SS variable.
+     *
+     * @var string
+     */
+    private static $singular_name = 'Alipay / WeChat Payment';
+
+    /**
+     * standard SS variable.
+     *
+     * @var string
+     */
+    private static $plural_name = 'Alipay / WeChat Payments';
+
     // AliPay Information
 
     private static $qrcode_image = 'app/client/images/alipay.png';

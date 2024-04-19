@@ -1,6 +1,6 @@
 <h1>请注意付款详情<br  />Please note details for payment</h1>
 
-<p><strong>金额和货币<br  />Currency and Amount:</strong> <span class="highlight">$Currency $Amount</span></p>
+<p><strong>货币和金额<br  />Currency and Amount:</strong> <span class="highlight">$Currency $Amount</span></p>
 
 <p><strong>支付参考<br  />Payment Reference:</strong> <span class="highlight">$Order.ID</span></p>
 

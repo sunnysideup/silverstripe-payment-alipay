@@ -76,7 +76,7 @@ class AliPayPayment extends EcommercePayment
 
         return DBField::create_field(
             'HTMLText',
-            '<img src="' . $src . '" alt="Credit card payments powered by AliPay"/>'
+            '<img src="' . $src . '" alt="Credit card payments powered by Alipay / WeChat"/>'
         );
     }
 

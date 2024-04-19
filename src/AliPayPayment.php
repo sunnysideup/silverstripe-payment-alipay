@@ -65,7 +65,7 @@ class AliPayPayment extends EcommercePayment
 
         return DBField::create_field(
             'HTMLText',
-            '<img src="' . $src . '" alt="Pay with AliPay / WeChat"/>'
+            '<img src="' . $src . '" alt="Pay with Alipay / WeChat"/>'
         );
     }
 

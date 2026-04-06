@@ -1,40 +1,40 @@
 {
-    "name": "sunnysideup/payment-alipay",
-    "description": "Allows e-commerce payments to be made with wechat / Alipay",
-    "type": "silverstripe-vendormodule",
-    "keywords": [
-        "silverstripe",
-        "ecommerce",
-        "payment",
-        "alipay",
-        "wechat"
-    ],
-    "license": "BSD-3-Clause",
-    "require": {
-        "silverstripe/framework": "^5.0",
-        "silverstripe/admin": "^2.0"
-    },
-    "require-dev": {
-        "sunnysideup/sswebpack_engine_only": "dev-master",
-        "silverleague/ideannotator": "*"
-    },
-    "autoload": {
-        "psr-4": {
-            "Sunnysideup\\PaymentAliPay\\": "src/"
-        }
-    },
-    "extra": {
-        "expose": [
-            "client/dist"
-        ]
-    },
-    "authors": [
-        {
-            "name": "Nicolaas Thiemen Francken",
-            "email": "modules@sunnysideup.co.nz",
-            "role": "lead developer"
-        }
-    ],
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  "name": "sunnysideup/payment-alipay",
+  "description": "Allows e-commerce payments to be made with wechat / Alipay",
+  "type": "silverstripe-vendormodule",
+  "keywords": [
+    "silverstripe",
+    "ecommerce",
+    "payment",
+    "alipay",
+    "wechat"
+  ],
+  "license": "BSD-3-Clause",
+  "require": {
+    "silverstripe/framework": "^5.0",
+    "silverstripe/admin": "^2.0"
+  },
+  "require-dev": {
+    "sunnysideup/sswebpack_engine_only": "5.x-dev",
+    "silverleague/ideannotator": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sunnysideup\\PaymentAliPay\\": "src/"
+    }
+  },
+  "extra": {
+    "expose": [
+      "client/dist"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Nicolaas Thiemen Francken",
+      "email": "modules@sunnysideup.co.nz",
+      "role": "lead developer"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }

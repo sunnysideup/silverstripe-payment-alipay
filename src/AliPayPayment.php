@@ -4,22 +4,16 @@ namespace Sunnysideup\PaymentAliPay;
 
 use SilverStripe\CMS\Controllers\ContentController;
 use SilverStripe\CMS\Model\SiteTree;
-use SilverStripe\Control\Email\Email;
 use SilverStripe\Core\Config\Config;
 use SilverStripe\Core\Manifest\ModuleResourceLoader;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\Form;
 use SilverStripe\Forms\LiteralField;
-use SilverStripe\Forms\ReadonlyField;
 use SilverStripe\ORM\FieldType\DBField;
-use SilverStripe\ORM\FieldType\DBMoney;
 use SilverStripe\View\Requirements;
-use Sunnysideup\Ecommerce\Forms\OrderForm;
 use Sunnysideup\Ecommerce\Model\Money\EcommercePayment;
 use Sunnysideup\Ecommerce\Model\Order;
-use Sunnysideup\Ecommerce\Money\Payment\PaymentResults\EcommercePaymentFailure;
 use Sunnysideup\Ecommerce\Money\Payment\PaymentResults\EcommercePaymentProcessing;
-use Sunnysideup\PaymentAliPay\Control\AliPayPaymentHandler;
 use Sunnysideup\PaymentDirectcredit\DirectCreditPayment;
 
 class AliPayPayment extends EcommercePayment
@@ -58,19 +52,19 @@ class AliPayPayment extends EcommercePayment
     private static $default_status = EcommercePayment::PENDING_STATUS;
 
     private static $after_payment_message_zh = '我们将通过支付宝/微信检查您的付款状态，并在出现任何问题时通知您。';
+
     private static $after_payment_message_en = 'We will check your payment status with Alipay / WeChat and let you know if there are any issues.';
 
 
     private static $email_debug = false;
+
     public function getPaymentFormFields($amount = 0, ?Order $order = null): FieldList
     {
         $logo = $this->getLogoResource();
         $info = $logo ;
 
 
-        return new FieldList(
-            new LiteralField('AliPayInfo', $logo),
-        );
+        return FieldList::create(LiteralField::create('AliPayInfo', $logo));
     }
 
     public function getLogoResource()
@@ -131,16 +125,20 @@ class AliPayPayment extends EcommercePayment
                 $currency = $currencyObject->Code;
             }
         }
+
         if (! $amount && ! empty($data['Amount'])) {
             $amount = (float) $data['Amount'];
         }
+
         if (! $currency && ! empty($data['Currency'])) {
             $currency = (string) $data['Currency'];
         }
+
         //final backup for currency
         if (! $currency) {
             $currency = EcommercePayment::site_currency();
         }
+
         $this->Amount->Currency = $currency;
         $this->Amount->Amount = $amount;
         $this->write();
@@ -150,7 +148,7 @@ class AliPayPayment extends EcommercePayment
 
     public function showRedirect(float $amount, string $currency, Order $order)
     {
-        $page = new SiteTree();
+        $page = SiteTree::create();
         $page->Title = 'Alipay Payment information ...';
         $page->Logo = $this->getQrCodeImageResource();
         $page->Content = $this->renderWith('Sunnysideup\PaymentAliPay\AliPayForm', [
@@ -158,7 +156,7 @@ class AliPayPayment extends EcommercePayment
             'Currency' => $currency,
             'Order' => $order,
         ]);
-        $controller = new ContentController($page);
+        $controller = ContentController::create($page);
         Requirements::clear();
 
         return EcommercePaymentProcessing::create($controller->RenderWith('Sunnysideup\Ecommerce\PaymentProcessingPage'));
